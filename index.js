@@ -4,4 +4,7 @@ const app = express();
 //Import Routes 
 const authRoute = require('./routes/auth');
 
-app.listen(3000, () => console.log('server up and running'));
+//Route Middlewares
+app.use('/api/user',authRoute);
+
+app.listen(9000, () => console.log('server up and running'));
