@@ -1,5 +1,12 @@
 const express = require('express');
 const app = express();
+const mongoose = require('mongoose');
+
+
+//connect to DB
+mongoose.connect('mongodb+srv://jadwa:jadwa@cluster0.e1sc6.mongodb.net/auth?retryWrites=true&w=majority',
+() => console.log('connect to db!')
+);
 
 //Import Routes 
 const authRoute = require('./routes/auth');
