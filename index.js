@@ -1,11 +1,13 @@
 const express = require('express');
 const app = express();
+const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 
+dotenv.config();
 
 //connect to DB
-mongoose.connect('mongodb+srv://jadwa:jadwa@cluster0.e1sc6.mongodb.net/auth?retryWrites=true&w=majority',
-() => console.log('connect to db!')
+mongoose.connect(process.env.DB_CONNECT,{ useNewUrlParser: true }, () =>
+    console.log('connect to db!')
 );
 
 //Import Routes 
