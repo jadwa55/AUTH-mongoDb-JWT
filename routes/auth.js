@@ -10,11 +10,6 @@ router.post('/register', async (req,res) => {
         password: req.body.password
     });
     try {
-        // const name= req.body.name;
-        // const email= req.body.email;
-        // const password= req.body.password;
-        // const saveUser = await User.insertMany({name: name, email:email,password:password})
-        // console.log(saveUser);
         const saveUser = await user.save();
         res.send(saveUser);
     }catch(err){
