@@ -28,4 +28,12 @@ router.post('/register', async (req,res) => {
     }
 });
 
+// Login 
+ router.post('/login', (req, res) => {
+
+    // Checking if the email exists
+    const emailExist = await User.findOne({email: req.body.email});
+    if(!emailExist) return res.status(400).send('Email or password is wrong');
+ });
+
 module.exports = router;
